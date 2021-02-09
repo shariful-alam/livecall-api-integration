@@ -1,0 +1,272 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.t.livecall.io/v2/calls/8020
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.t.livecall.io
+      Authorization:
+      - Token Xq2L18bIWBDvgpMRwt5w3Q==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.17.7
+      Date:
+      - Sat, 06 Feb 2021 10:05:52 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, PATCH, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Max-Age:
+      - '1728000'
+      Etag:
+      - W/"e546e072bb163e456ed78b713a7f327f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8b6ab4f32005ba6dcc57a1822f2ca994
+      X-Runtime:
+      - '0.031343'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"8020","type":"calls","attributes":{"external_id":null,"phone_number":"+48
+        678678678","kind":"callback","status":"initiated","outcome":"successful","user_status":null,"is_retried":false,"was_deferred":false,"scheduled_for":null,"created_at":"2021-01-29T12:17:02+01:00","attempted_at":"2021-01-29T13:18:02+01:00","answered_at":null,"started_at":"2021-01-29T13:20:02+01:00","ended_at":"2021-01-29T13:27:02+01:00","ending_reason":null,"ended_by":null,"has_error":false,"deduplications_count":null,"direction":null,"duration":420,"text_content":null,"comment":null,"visitor_reference":null,"has_recording":false,"source_type":null,"source_attributes":null},"relationships":{"account":{"links":{"related":"https://api.t.livecall.io/v2/accounts/543"}},"filter":{"links":{"related":"https://api.t.livecall.io/v2/filters/789"},"data":{"type":"filters","id":"789"}},"user":{"links":{"related":"https://api.t.livecall.io/users?ids%5B%5D=926"}},"lead":{"links":{"related":"https://api.t.livecall.io/v2/leads/1745"}},"custom_field_values":{"links":{"related":"https://api.t.livecall.io/v2/custom_field_values?filter[call_id]=8020"}},"legs":{"links":{"related":"https://api.t.livecall.io/v2/call_legs?filter[call_id]=8020"}},"events":{"links":{"related":"https://api.t.livecall.io/v2/call_events?filter[call_id]=8020"}}}},"meta":{}}'
+  recorded_at: Sat, 06 Feb 2021 10:05:52 GMT
+- request:
+    method: get
+    uri: https://api.t.livecall.io/v2/users/926
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.t.livecall.io
+      Authorization:
+      - Token Xq2L18bIWBDvgpMRwt5w3Q==
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.17.7
+      Date:
+      - Sat, 06 Feb 2021 10:05:53 GMT
+      Content-Type:
+      - application/vnd.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, PATCH, DELETE, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Max-Age:
+      - '1728000'
+      Etag:
+      - W/"18e5eb8ae13c7efb150068f32399fd47"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cee9e92c3dea27ff360b987cb1579a22
+      X-Runtime:
+      - '0.047714'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"926","type":"users","attributes":{"email":"piotrek+activecampaign@livecall.io","role":"admin","name":"ActiveCampaign","phone_number":"+48
+        123123123"},"relationships":{"leads":{"links":{"related":"https://api.t.livecall.io/v2/leads?filter[user_id]=926"}}}},"meta":{}}'
+  recorded_at: Sat, 06 Feb 2021 10:05:53 GMT
+- request:
+    method: get
+    uri: https://api.hubapi.com/contacts/v1/search/query?count=100&hapikey=8072f27f-f2f4-4310-8a87-cdf3d1f35799&offset=0&q=%2B48%20678678678
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 06 Feb 2021 10:05:55 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '958'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc39cce8b4c99fd3804e8f8f6294d499d1612605955; expires=Mon, 08-Mar-21
+        10:05:55 GMT; path=/; domain=.hubapi.com; HttpOnly; SameSite=Lax
+      X-Trace:
+      - 2B2CAFE4EEDD06FE322AA070BA898D7261703161AD000000000000000000
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499991'
+      X-Hubspot-Ratelimit-Interval-Milliseconds:
+      - '10000'
+      X-Hubspot-Ratelimit-Remaining:
+      - '149'
+      X-Hubspot-Ratelimit-Max:
+      - '150'
+      X-Hubspot-Ratelimit-Secondly:
+      - '15'
+      X-Hubspot-Ratelimit-Secondly-Remaining:
+      - '14'
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '08186734c100008773c291b000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"max_age":604800,"group":"cf-nel","endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=YlbknXGwoqbCc2L7MbSqS8kh7ViO4%2BWo6FADYOVUCPdx9T9SInsDBnoIEvktaGQ37FA6Ol6chockebpnftzCfUmMSXpVR32RRz6lhXlGfw%3D%3D"}]}'
+      Nel:
+      - '{"max_age":604800,"report_to":"cf-nel"}'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 61d40e346dc38773-CGP
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"query":"+48 678678678","offset":1,"has-more":false,"total":1,"contacts":[{"vid":651,"canonical-vid":651,"merged-vids":[],"portal-id":9343945,"is-contact":true,"profile-token":"AO_T-mMLj2MaGYdl1-z3zPwwpQo42HcbC31Y_hN8GLi4atf_XsB2N0uFHEM-v5-oElIqmcWIqgxO9lxDoDT2JvLO_4CbSOnSg0YIgtphgjGsWrELu9TVrMdsJUMgDWDvCI6zsVJi9g1v","profile-url":"https://app.hubspot.com/contacts/9343945/contact/651","properties":{"hs_is_unworked":{"value":"true"},"firstname":{"value":"ActiveCampaign"},"num_unique_conversion_events":{"value":"0"},"hs_analytics_revenue":{"value":"0.0"},"createdate":{"value":"1612525732918"},"hs_social_num_broadcast_clicks":{"value":"0"},"hs_calculated_phone_number_country_code":{"value":"PL"},"hs_analytics_num_visits":{"value":"0"},"hs_social_linkedin_clicks":{"value":"0"},"hs_analytics_source":{"value":"OFFLINE"},"num_contacted_notes":{"value":"6"},"hs_searchable_calculated_phone_number":{"value":"678678678"},"hs_analytics_num_page_views":{"value":"0"},"hs_email_domain":{"value":"livecall.io"},"hs_calculated_phone_number":{"value":"+48678678678"},"email":{"value":"piotrek+activecampaign@livecall.io"},"notes_last_updated":{"value":"1612605921134"},"hs_analytics_first_timestamp":{"value":"1612525732918"},"lastmodifieddate":{"value":"1612605936375"},"hs_social_google_plus_clicks":{"value":"0"},"hs_lifecyclestage_subscriber_date":{"value":"1612525732918"},"hs_analytics_average_page_views":{"value":"0"},"hs_all_contact_vids":{"value":"651"},"hs_social_facebook_clicks":{"value":"0"},"hs_predictivecontactscore_v2":{"value":"2.91"},"notes_last_contacted":{"value":"1612605921134"},"phone":{"value":"+48
+        678678678"},"hs_is_contact":{"value":"true"},"num_conversion_events":{"value":"0"},"hs_object_id":{"value":"651"},"hs_analytics_num_event_completions":{"value":"0"},"hs_social_twitter_clicks":{"value":"0"},"hs_analytics_source_data_1":{"value":"API"},"lifecyclestage":{"value":"subscriber"},"num_notes":{"value":"6"}},"form-submissions":[],"identity-profiles":[{"vid":651,"saved-at-timestamp":0,"deleted-changed-timestamp":0,"identities":[{"type":"EMAIL","value":"piotrek+activecampaign@livecall.io","timestamp":1612525732918,"is-primary":true},{"type":"LEAD_GUID","value":"01079bf4-1e33-452c-97d5-516a8e93d16a","timestamp":1612525732947}]}],"merge-audits":[]}]}'
+  recorded_at: Sat, 06 Feb 2021 10:05:55 GMT
+- request:
+    method: post
+    uri: https://api.hubapi.com/engagements/v1/engagements?hapikey=8072f27f-f2f4-4310-8a87-cdf3d1f35799
+    body:
+      encoding: UTF-8
+      string: '{"engagement":{"type":"CALL","active":true},"associations":{"contactIds":[651]},"metadata":{"toNumber":"+48
+        678678678","fromNumber":"+48 123123123","status":"COMPLETED","durationMilliseconds":420,"body":"Phone
+        number: +48 678678678, Kind: Callback, Time: 2021-01-29T13:20:02+01:00, Duration:
+        420"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 06 Feb 2021 10:05:57 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '466'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d939e65df28d0f5ba3e2e123447330a6c1612605956; expires=Mon, 08-Mar-21
+        10:05:56 GMT; path=/; domain=.hubapi.com; HttpOnly; SameSite=Lax
+      X-Trace:
+      - 2B306E430A6B4D73716AAE5E8770BBEAF1FCE1876A000000000000000000
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499990'
+      X-Hubspot-Ratelimit-Interval-Milliseconds:
+      - '10000'
+      X-Hubspot-Ratelimit-Remaining:
+      - '148'
+      X-Hubspot-Ratelimit-Max:
+      - '150'
+      X-Hubspot-Ratelimit-Secondly:
+      - '15'
+      X-Hubspot-Ratelimit-Secondly-Remaining:
+      - '14'
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '081867386f0000876f6a1ae000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=Fq9aSR17DrT2R%2Bakg7jkShLFLx%2FDbJRxcFiUqQsJE87IE3E4IriTz2lg33qwuEVFk3Cgxv5tk%2FcFIjLLqg9hcvUFKbmiecKaZl2pICxdUw%3D%3D"}]}'
+      Nel:
+      - '{"report_to":"cf-nel","max_age":604800}'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 61d40e3a4c3f876f-CGP
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"associationCreateFailures":[],"engagement":{"id":10961225701,"portalId":9343945,"active":true,"createdAt":1612605957240,"lastUpdated":1612605957240,"type":"CALL","timestamp":1612605957240,"allAccessibleTeamIds":[],"bodyPreview":"Phone
+        number: +48 678678678, Kind: Callback, Time: 2021-01-29T13:20:02+01:00, Duration:
+        420","queueMembershipIds":[],"bodyPreviewIsTruncated":false,"bodyPreviewHtml":"<html>\n
+        <head></head>\n <body>\n Phone number: +48 678678678, Kind: Callback, Time:
+        2021-01-29T13:20:02+01:00, Duration: 420\n </body>\n</html>","gdprDeleted":false},"associations":{"contactIds":[651],"companyIds":[],"dealIds":[],"ownerIds":[],"workflowIds":[],"ticketIds":[],"contentIds":[],"quoteIds":[]},"attachments":[],"metadata":{"toNumber":"+48
+        678678678","fromNumber":"+48 123123123","status":"COMPLETED","durationMilliseconds":420,"body":"Phone
+        number: +48 678678678, Kind: Callback, Time: 2021-01-29T13:20:02+01:00, Duration:
+        420"}}'
+  recorded_at: Sat, 06 Feb 2021 10:05:57 GMT
+recorded_with: VCR 6.0.0
