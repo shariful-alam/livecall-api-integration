@@ -15,16 +15,16 @@ class HubSpotIntegration
     call_attributes[:kind] = call["data"]["attributes"]["kind"]
     call_attributes[:duration] = call["data"]["attributes"]["duration"]
     call_attributes[:name] = ""
-    call_attributes[:email] = "demo@gmail.com"
+    call_attributes[:email] = ""
     call_attributes[:from_number] = ""
-    if !call["data"]["relationships"]["user"]["links"]["related"].nil?
-      user_id = call["data"]["relationships"]["user"]["links"]["related"].split("=")[1].to_i
+    unless call["data"]["relationships"]["user"]["links"]["related"].nil?
+      user_id = call["data"]["relationships"]["user"]["links"]["related"].split("/").last.to_i
       user = make_http_request("https://api.t.livecall.io/v2/users/#{user_id}", params[:livecall_api_key])
       call_attributes[:user_name] = user["data"]["attributes"]["name"]
       call_attributes[:email] = user["data"]["attributes"]["email"]
       call_attributes[:from_number] = user["data"]["attributes"]["phone_number"]
     end
-    contact = Hubspot::Contact.search(call_attributes[:phone_number])["contacts"][0]
+    contact = retrieve_contact(call_attributes[:phone_number])
     if contact.nil?
       if !call_attributes[:kind].eql?("external") && !call_attributes[:kind].eql?("external_text")
         contact = Hubspot::Contact.create!(
@@ -85,6 +85,23 @@ class HubSpotIntegration
     end
   end
 
+  def self.retrieve_contact(phone_number)
+    contact = Hubspot::Contact.search(phone_number)["contacts"][0]
+    if contact.nil?
+      contact = Hubspot::Contact.search(phone_number.gsub(/\s/, ""))["contacts"][0]
+    end
+    if contact.nil?
+      contact = Hubspot::Contact.search(phone_number.gsub(/^\+/, ""))["contacts"][0]
+    end
+    if contact.nil?
+      contact = Hubspot::Contact.search(phone_number.gsub(/[\+\s]/, ""))["contacts"][0]
+    end
+    if contact.nil?
+      contact = Hubspot::Contact.search(phone_number.gsub(/^\+\d+\s/, ""))["contacts"][0]
+    end
+    contact
+  end
+
   def self.set_api_key
     Hubspot.configure(hapikey: HUBPOST_API_KEY)
   end
@@ -121,4 +138,9 @@ class HubSpotIntegration
     end
     info_string
   end
+end
+
+
+def main(parameters = {})
+  HubSpotIntegration.main(parameters)
 end
