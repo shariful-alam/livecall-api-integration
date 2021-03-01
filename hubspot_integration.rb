@@ -1,3 +1,11 @@
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem "hubspot-ruby", "0.9.0"
+end
+
+
 require 'hubspot-ruby'
 require 'uri'
 require 'net/http'
